@@ -12,7 +12,7 @@ public class SimpleWDTest {
     public void simpleWDTest() {
         SimpleDriver simpleDriver = new SimpleDriver();
         WebDriver driver = simpleDriver.getDriver();
-        driver.quit();
+        driver.quit();  //секция закрывает браузер если нету команды в диспечере надо убить процесс
     }
     @Test
     public void advancedWDTest() {
