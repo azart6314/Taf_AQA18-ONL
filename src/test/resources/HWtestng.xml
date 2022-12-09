@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="HwSuite">
+  <test name="HwSmoke">
+      <classes>
+          <class name="tests.HWCalculatorTest">
+              <methods>
+                  <include name="divInt"/>
+                  <include name="divInt1"/>
+                  <include name="divInt2"/>
+                  <include name="divIntParam4DependsGlava"/>
+              </methods>
+          </class>
+      </classes>
+    </test>
+    
+    <test name="HwGrups">
+        <groups>
+            <define name="Groups 1">
+                <include name="smoke"/>
+                <include name="smoke1"/>
+            </define>
+            <define name="Groups 2">
+                <include name="smoke2"/>
+            </define>
+        </groups>
+    </test>
+
+    <test name="parallel">
+        <classes>
+            <class name="tests.HWCalculatorTest"/>
+            <class name="tests.HWStatikProviderTest"/>
+        </classes>
+    </test>
+</suite>
