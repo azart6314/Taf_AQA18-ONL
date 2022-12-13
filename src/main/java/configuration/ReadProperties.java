@@ -3,13 +3,13 @@ package configuration;
 import java.io.IOException;
 import java.util.Properties;
 
-public class ReadProperties {
+public class ReadProperties { //клас можно использоватеь в любов месте
     private static final Properties properties;
 
     static {
         properties = new Properties();
         try {
-            properties.load(ReadProperties.class.getClassLoader().getResourceAsStream("config.properties"));
+            properties.load(ReadProperties.class.getClassLoader().getResourceAsStream("config.properties")); //берем от config.properties нужные значения
         } catch (IOException e) {
             e.printStackTrace();
         }
