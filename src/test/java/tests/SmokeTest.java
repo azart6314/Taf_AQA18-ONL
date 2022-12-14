@@ -23,10 +23,11 @@ public class SmokeTest {
     public void validateIKTCalculator() throws InterruptedException {
         driver.get("https://clinic-cvetkov.ru/company/kalkulyator-imt/"); //driver.get - позволяет переходить по опред ссылке
 
+        //поиск элемента
         WebElement heightInput = driver.findElement(By.name("height")); //driver.findElement -метод еотор вернет нам еонеретный экземпляр нейкого веб элемента  //findElement- вернет список таких элементов //крит олича есть
         WebElement weightInput = driver.findElement(By.name("weight")); //weight -название элемента смотрим в браузере, Input - тип элемента (название тэга в браузере)
         WebElement calcButton = driver.findElement(By.id("calc-mass-c"));//calc -название элемента смотрим в браузере, Button  - тип элемента (название тэга в браузере)
-
+        //ввод данных в элемент
         heightInput.sendKeys("183");
         weightInput.sendKeys("58");
 //        weightInput.sendKeys(Keys.CONTROL, Keys.ALT);//Keys. -после точки можно выбирать выриацию кравиш
@@ -41,7 +42,7 @@ public class SmokeTest {
     @Test
     public void validateSKFTest() throws InterruptedException {
         driver.get("http://13gp.by/informatsiya/meditsinskie-kalkulyatory/995-raschet-skorosti-klubochkovoj-filtratsii-skf");
-        WebElement selectWebElement = driver.findElement(By.id("oSex")); // берем именно веб элемент select и выбираем id
+        WebElement selectWebElement = driver.findElement(By.id("oSex")); //для выподающего списка берем именно веб элемент select и выбираем id
         Select selectSex = new Select(selectWebElement); //проводим инициализацию. Для проверки дроп даунов
         selectSex.selectByIndex(1);// можно выбрать один из 3  способов
 //        Thread.sleep(2000);// что бы увидеть результат
