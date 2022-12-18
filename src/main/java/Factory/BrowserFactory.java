@@ -18,7 +18,7 @@ public class BrowserFactory {
         switch (ReadProperties.browserName().toLowerCase()) { //читаем класс и берем название браузера с малой буквы
             case "chrome":
                 DriverManagerType driverManagerType = DriverManagerType.CHROME; //проверяем что это хром и берем вебдрайвер мен5джер
-                WebDriverManager.getInstance(driverManagerType).setup(); //setup- автомат проверяет что за браузер используется сейчас какая версия если версия устарела это обновит его автоматом. Позволяет не указывать путь к драйверу который ранее скачивали
+                WebDriverManager.getInstance(driverManagerType).setup(); //setup- автомат проверяет что за браузер используется, какая версия если версия устарела обновит его автоматом. Позволяет не указывать путь к драйверу который ранее скачивали
 
                 // ниже идут модернизация бразуреа. Праметры которые нам нужны для работы. Можно посмотреть настройки на steak over flou
                 ChromeOptions chromeOptions = new ChromeOptions();
@@ -28,7 +28,6 @@ public class BrowserFactory {
                 chromeOptions.addArguments("--ignore-certificate-errors"); //игнор сертификатов
                 chromeOptions.addArguments("--silent"); // работать молче без запросов или вопросов
                 chromeOptions.addArguments("--start-maximized");// метот который развернет на максы
-
                 driver = new ChromeDriver(chromeOptions); // возвращает все эти пораметры
 
                 break; // завершение
