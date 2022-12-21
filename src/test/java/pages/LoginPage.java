@@ -22,7 +22,7 @@ public class LoginPage extends BasePage {
         return logInButtonLocator;
     }
 
-    // Блок атомарных методов
+    // Блок атомарных методов //поиск элементов
     public WebElement getEmailInput() { return driver.findElement(emailInputLocator);}
     public WebElement getPassword() { return driver.findElement(passwordInputLocator);}
     public WebElement getLogInButton() { return driver.findElement(logInButtonLocator);}

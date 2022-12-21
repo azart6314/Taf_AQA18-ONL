@@ -17,7 +17,7 @@ import steps.UserStep;
 public class LoginTest extends BaseTest {
 
 
-    @Test
+//    @Test
     public void loginTest() {
         driver.get(ReadProperties.getUrl()); //не фак что надо
 
@@ -36,7 +36,7 @@ public class LoginTest extends BaseTest {
     }
 
 
-        @Test
+//        @Test
         public void loginIncorrectTest() {
             Assert.assertEquals(
                     userStep.loginIncorrect(ReadProperties.username(), "qwewqqqw")

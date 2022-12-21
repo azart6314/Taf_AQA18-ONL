@@ -12,12 +12,15 @@ public class BaseTest {
     protected WebDriver driver;
     protected UserStep userStep;
 
+
+
     @BeforeMethod
     public void setUp() {
         driver = new BrowserFactory().getDriver();
         driver.get(ReadProperties.getUrl());
 
         userStep = new UserStep(driver);
+        System.out.println(driver.hashCode());
     }
 
     @AfterMethod
