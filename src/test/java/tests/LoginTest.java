@@ -40,7 +40,7 @@ public class LoginTest extends BaseTest {
         public void loginIncorrectTest() {
             Assert.assertEquals(
                     userStep.loginIncorrect(ReadProperties.username(), "qwewqqqw")
-                            .get.getText(),
+                            .getErrorTextElement().getText(),
                     "Email/Login or Password is incorrect. Please try again."
             );
     }
