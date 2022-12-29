@@ -29,7 +29,7 @@ public class LoginTestSWAG {
         driver.findElement(By.id("password")).sendKeys(ReadProperties.password());
         driver.findElement(By.name("login-button")).click();
 
-        Assert.assertTrue(driver.findElement(By.cssSelector()));
+        Assert.assertTrue(driver.findElement(By.cssSelector("span.title")).isDisplayed("Products"));
     }
 
 
