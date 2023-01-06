@@ -19,6 +19,11 @@ public class LoginPageSWAG extends BasePageSWAG {
         super(driver);
     }
 
+    @Override
+    protected By getPageIdentifier() {
+        return loginButtonLocator;
+    }
+
     //блок отомарных методов (методы которые позваляют нам получить элемент или сделать какое то одно простое действие)
     public WebElement getNameInput() { return driver.findElement(userNameInputLocator);}
     public WebElement getPasswordInputLocator() { return driver.findElement(passwordInputLocator);}

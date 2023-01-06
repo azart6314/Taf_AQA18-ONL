@@ -9,6 +9,7 @@ import org.testng.Assert;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
+import pages.DashboardPageSWAG;
 import pages.LoginPageSWAG;
 
 public class LoginTestSWAG extends BaseTestSWAG {
@@ -31,7 +32,7 @@ public class LoginTestSWAG extends BaseTestSWAG {
         //driver.findElement(By.id("password")).sendKeys(ReadProperties.password());
         //driver.findElement(By.name("login-button")).click();
 
-        Assert.assertTrue(driver.findElement(By.xpath("//span[contains(text(), 'Products')]")).isDisplayed()); //финаоьная проверка что мы именно на нужной странице
+        Assert.assertTrue(new DashboardPageSWAG(driver).isPageOpened()); //осуществляет проверку нахождения элемента на странице
     }
 
 

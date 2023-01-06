@@ -23,4 +23,7 @@ public abstract class BasePage {
         driver.get(ReadProperties.getUrl() + pagePath);
     }
 
+
+    }
+
 }
