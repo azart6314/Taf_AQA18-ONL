@@ -13,7 +13,7 @@ public abstract class BasePage {    //класс создан для того ч
     //после создания этих методов в pages надо имплементировать override метод
     protected abstract By getPageIdentifier(); //он якобы реализован и берем его ниже
 
-    public boolean ipPageOpened() {   //метод который проверяет открылась ли страница один метод на все страницы
+    public boolean isPageOpened() {   //метод который проверяет открылась ли страница один метод на все страницы
         return driver.findElement(getPageIdentifier()).isDisplayed();
     }
 }
