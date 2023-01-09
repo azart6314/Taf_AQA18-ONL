@@ -27,6 +27,12 @@ public class LoginPage extends BasePage {
     public WebElement getPassword() {return driver.findElement(passwordInputLocator);}
     public WebElement getLoginButton() {return driver.findElement(loginButtonLocator);}
 
+//    public void loginSuccessful (String email, String psw) {  // метод забрали и отправили в userStep
+//        getEmailInput().sendKeys(email);
+//        getPassword().sendKeys(psw);
+//        getLoginButton().click();
+//    }
+
 
 
 

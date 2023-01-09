@@ -36,5 +36,13 @@ public class BasketPage extends BasePage {
     public WebElement getButtonContinueOrdering() {return driver.findElement(buttonContinueOrderingLocator);}
     public WebElement getButtonFinishOrder() {return driver.findElement(buttonFinishOrderLocator);}
 
+//    public void enteringUserInformationSuccessful(String firstName, String lastName, String postalCode) {
+//        getGoToCheckout().click();
+//        getFirstName().sendKeys(firstName);
+//        getLastName().sendKeys(lastName);
+//        getPostalCode().sendKeys(postalCode);
+//        getButtonContinueOrdering().click();
+//        getButtonFinishOrder().click();
+//    }
 
 }

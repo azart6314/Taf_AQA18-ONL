@@ -28,4 +28,9 @@ public class CatalogPage extends BasePage {
     public WebElement getAddBackpackToCart() {return driver.findElement(addBasketBackpackLocator);}
     public WebElement getGoToCart () {return driver.findElement(buttonGoToCartLocator);}
 
+//    public void addToCartBackpackSuccessful ( ) {   //забрали в юзер степ
+//        getAddBackpackToCart().click();
+//        getGoToCart().click();
+//    }
+
 }
