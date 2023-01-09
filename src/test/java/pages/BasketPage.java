@@ -16,6 +16,7 @@ public class BasketPage extends BasePage {
     private final By buttonFinishOrderLocator = By.id("finish");
     private final By headerTitleBasketLocator = By.xpath("//span[contains(text(), 'Your Cart')]");
 
+
     //Блок инициализаций страницы
     public BasketPage(WebDriver driver) {
         super(driver);
@@ -25,6 +26,7 @@ public class BasketPage extends BasePage {
     protected By getPageIdentifier() {
         return headerTitleBasketLocator;
     }
+
 
     //Блок атомарных методов
     public WebElement getGoToCheckout() {return driver.findElement(goToCheckoutPageLocator);}
