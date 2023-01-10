@@ -7,7 +7,6 @@ import org.openqa.selenium.WebElement;
 
 public class BasketPage extends BasePage {
 
-    //блок описания локатора для элемента
     private final By goToCheckoutPageLocator = By.id("checkout");
     private final By firstNameLocator = By.id("first-name");
     private final By lastNameLocator = By.id("last-name");
@@ -16,8 +15,6 @@ public class BasketPage extends BasePage {
     private final By buttonFinishOrderLocator = By.id("finish");
     private final By headerTitleBasketLocator = By.xpath("//span[contains(text(), 'Your Cart')]");
 
-
-    //Блок инициализаций страницы
     public BasketPage(WebDriver driver) {
         super(driver);
     }
@@ -28,21 +25,11 @@ public class BasketPage extends BasePage {
     }
 
 
-    //Блок атомарных методов
     public WebElement getGoToCheckout() {return driver.findElement(goToCheckoutPageLocator);}
     public WebElement getFirstName() {return driver.findElement(firstNameLocator);}
     public WebElement getLastName() {return driver.findElement(lastNameLocator);}
     public WebElement getPostalCode() {return driver.findElement(postalCodeLocator);}
     public WebElement getButtonContinueOrdering() {return driver.findElement(buttonContinueOrderingLocator);}
     public WebElement getButtonFinishOrder() {return driver.findElement(buttonFinishOrderLocator);}
-
-//    public void enteringUserInformationSuccessful(String firstName, String lastName, String postalCode) {
-//        getGoToCheckout().click();
-//        getFirstName().sendKeys(firstName);
-//        getLastName().sendKeys(lastName);
-//        getPostalCode().sendKeys(postalCode);
-//        getButtonContinueOrdering().click();
-//        getButtonFinishOrder().click();
-//    }
 
 }
