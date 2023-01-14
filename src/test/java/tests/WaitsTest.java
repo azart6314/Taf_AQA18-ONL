@@ -5,13 +5,13 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.testng.Assert;
 import org.testng.annotations.Test;
-import services.WaitService;
+import services.WaitsService;
 
 import java.time.Duration;
 
 public class WaitsTest extends BaseTest {
 
-    private WaitService waitsService;
+    private WaitsService waitsService;
 
     @Test
     public void implicitlyVisibilityTest() throws InterruptedException {
@@ -32,35 +32,17 @@ public class WaitsTest extends BaseTest {
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(0));
         driver.get("http://the-internet.herokuapp.com/dynamic_loading/1");
 
-        WaitService waitService = new WaitService(driver, Duration.ofSeconds(10));
+        WaitsService waitsService = new WaitsService(driver, Duration.ofSeconds(10));
 
-        WebElement button = waitService.waitForVisibilityBy(By.tagName("button"));
+        WebElement button = waitsService.waitForVisibilityBy(By.tagName("button"));
         button.click();
-        Assert.assertTrue(waitService.waitForElementInvisible(button));
+        Assert.assertTrue(waitsService.waitForElementInvisible(button));
 
-        WebElement loading = waitService.waitForVisibilityBy(By.id("loading"));
+        WebElement loading = waitsService.waitForVisibilityBy(By.id("loading"));
         Assert.assertTrue(loading.isDisplayed());
-        Assert.assertTrue(waitService.waitForElementInvisible(loading));
+        Assert.assertTrue(waitsService.waitForElementInvisible(loading));
 
-        Assert.assertTrue(waitService.waitForVisibilityBy(By.cssSelector("#finish h4")).isDisplayed());
+        Assert.assertTrue(waitsService.waitForVisibilityBy(By.cssSelector("#finish h4")).isDisplayed());
     }
-
-//    @Test  // нов метод с неявным ожиданием
-//    public void explicitlyVisibilityTest() throws InterruptedException {
-//        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(11));
-//        driver.get("http://the-internet.herokuapp.com/dynamic_loading/1");
-//
-//       WaitService waitService = new WaitService(driver, Duration.ofSeconds(11));
-//
-//        WebElement button = waitsService.waitForVisibilityBy(By.tagName("button"));
-//        button.click();
-//        Assert.assertTrue(waitsService.waitForElementInvisible(button));
-//
-//        WebElement loading = waitsService.waitForVisibilityBy(By.id("loading"));
-//        Assert.assertTrue(loading.isDisplayed());
-//        Assert.assertTrue(waitsService.waitForElementInvisible(loading));
-//
-//        Assert.assertTrue(waitsService.waitForVisibilityBy(By.cssSelector("#finish h4")).isDisplayed());
-//    }
 
 }
