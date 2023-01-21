@@ -44,18 +44,20 @@ public class ActionsTest extends BaseTest {
                 "download.jpeg");
     }
 
-    @Test
+    @Test //проблема с путем
     public void fileUploadTest() throws InterruptedException {  //загрузка файла. Ищес элемент с отрибутов файл
         driver.get("http://the-internet.herokuapp.com/upload");
 
         WebElement fileUploadElement = waitsService.waitForExists(By.xpath("//input[@type='file']"));
-        String pathToFile = ActionsTest.class.getClassLoader().getResource("download.jpeg").getPath(); //Путь к файлу. getPath -возвращает обсалютный путь к этому файлу в системе (в независимости где будет запускаться код )
+        String pathToFile = ActionsTest.class.getClassLoader().getResource("download.jpeg").getPath().substring(1);  //substring(1) ибираем первую / в пути
+        //Путь к файлу. getPath -возвращает обсалютный путь к этому файлу в системе (в независимости где будет запускаться код )
+
         System.out.println(pathToFile);
 
         fileUploadElement.sendKeys(pathToFile);
         waitsService.waitForVisibilityBy(By.id("file-submit")).submit();
 
-        Assert.assertEquals(waitsService.waitForVisibilityBy(By.id("uploaded-files")).getText().trim(),
+        Assert.assertEquals(waitsService.waitForVisibilityBy(By.id("uploaded-files")).getText().trim(), //trim обрубает пробелы по концам
                 "download.jpeg");
     }
 
