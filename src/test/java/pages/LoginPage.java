@@ -22,7 +22,7 @@ public class LoginPage extends BasePage {
         return logInButtonLocator;
     }
 
-    // Блок атомарных методов //поиск элементов
+    // Блок атомарных методов //поиск элементов // теперь находим элемент и сразу проверяем на отображение (waitsService)/используем ток в том случае если
     public WebElement getEmailInput() { return waitsService.waitForVisibilityBy(emailInputLocator);}
     public WebElement getPassword() { return waitsService.waitForVisibilityBy(passwordInputLocator);}
     public WebElement getLogInButton() { return waitsService.waitForVisibilityBy(logInButtonLocator);}

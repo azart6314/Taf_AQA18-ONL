@@ -7,7 +7,7 @@ import services.WaitsService;
 
 public abstract class BasePage {
     protected WebDriver driver;
-    protected WaitsService waitsService;
+    protected WaitsService waitsService; //иницилиазируем класс ожиданий и вконструкторе базовом( теперь дотупен во всех баз класссах)
 
     public BasePage(WebDriver driver) {
         this.driver = driver;
