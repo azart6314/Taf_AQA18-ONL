@@ -35,7 +35,7 @@ public class ReadProperties { //клас можно использоватеь �
         return properties.getProperty("headless").equalsIgnoreCase("true");
     }
 
-    public static int timeout() {  //из рид пропертис
+    public static int timeout() {  //из рид пропертис. Метод для обработки ожиданий из проперти
         return Integer.parseInt(properties.getProperty("timeout")); //Integer.parseInt конвертация из строки в инт
     }
 

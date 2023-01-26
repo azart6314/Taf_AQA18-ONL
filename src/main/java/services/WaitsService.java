@@ -12,13 +12,13 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import java.time.Duration;
 import java.util.List;
 
-public class WaitsService { //класс в которы добавляем все ожидания //иницилизируем клас и используем в Base pages
+public class WaitsService { //класс в которы добавляем все ожидания //иницилизируем клас и используем в Base pages(бас стэп или басе тест)
     private WebDriver driver;
-    private WebDriverWait wait;
+    private WebDriverWait wait; //переменная отвечает за ожидания
 
     public WaitsService(WebDriver driver) {  // конструктор который по умолчанию ( значит что будет время среднее для ожидания для событий которое указано в конфик проперти тайм аут) родоначальник
         this.driver = driver;
-        wait = new WebDriverWait(driver, Duration.ofSeconds(ReadProperties.timeout())); //родоночальник явных ожиданий
+        wait = new WebDriverWait(driver, Duration.ofSeconds(ReadProperties.timeout())); //родоночальник явных ожиданий которые берем из рид пропертис
     }
 
     public WaitsService(WebDriver driver, Duration timeout) {  // расширенный конструкот для не явн ожид
@@ -32,18 +32,20 @@ public class WaitsService { //класс в которы добавляем вс
 
     //ожидалка что элемент не видимы становиться(исчез)
     public boolean waitForElementInvisible(WebElement webElement) {
-        return wait.until(ExpectedConditions.invisibilityOf(webElement));//делаем проверку по веб элементу(могем по локатору но тут такое себе )
+        return wait.until(ExpectedConditions.invisibilityOf(webElement));//делаем проверку по веб элементу(могем по локатору но тут такое себе ) //invisibilityOf можно менять
     }
 
-    public List<WebElement> waitForAllVisibleElementsLocatedBy(By locator) {     //явная ожидалка
+    //явная ожидалка. Ждет отображение всех элементов
+    public List<WebElement> waitForAllVisibleElementsLocatedBy(By locator) {
         return wait.until(ExpectedConditions.visibilityOfAllElementsLocatedBy(locator));
     }
 
+    //явная ожмдалка которая просто проверяет что элемент находится в дом модели и не проверяет ее состояние
     public WebElement waitForExists(By locator) {
         return wait.until(ExpectedConditions.presenceOfElementLocated(locator));
     }
 
-    public WebElement fluentWaitForElement (By by) {
+    public WebElement fluentWaitForElement (By by) { //ожидалка в которой можно всякое прописать (лямда выражение )
         Wait<WebDriver> fluent = new FluentWait<>(driver)
                 .withTimeout(Duration.ofSeconds(30))  //настрока времени на ожидание
                 .pollingEvery(Duration.ofMillis(50)) //через какие милисикунды перепроверять (меньше 50 не имеет смылся ставить)
