@@ -17,7 +17,8 @@ public class ActionsTest extends BaseTest {
         driver.get("http://the-internet.herokuapp.com/hovers");
 //        List<WebElement> targetElements = driver.findElements(By.className("figure")); //поиск всех элементов на странице которые нам нужны когда нет ожидалки. Способ не рабочий
 
-        List<WebElement> targetElements = waitsService.waitForAllVisibleElementsLocatedBy(By.cssSelector(".figure"));//используем ожидалку которая ждем отображение всех элементов .figure
+        ////используем ожидалку которая ждем отображение всех элементов .figure
+        List<WebElement> targetElements = waitsService.waitForAllVisibleElementsLocatedBy(By.cssSelector(".figure"));
         //делаем ховер
         Actions actions = new Actions(driver);// иниацилизируем актионс
         actions // в самом экшене проверок нет. Тут только действие
