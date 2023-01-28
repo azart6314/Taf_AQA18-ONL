@@ -12,7 +12,7 @@ import java.time.Duration;
 public class DynamicControlsTest extends BaseTest {
 
     @Test
-    public void checkStringForEnable() {
+    public void checkStringForEnableTest() {
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(0));
         driver.get("http://the-internet.herokuapp.com/dynamic_controls");
         WaitsService waitsService = new WaitsService(driver, Duration.ofSeconds(10));

@@ -12,7 +12,7 @@ public class ContextMenuTest extends BaseTest {
 
 
     @Test
-    public void openContextMenu() {
+    public void openContextMenuTest() {
         driver.get("http://the-internet.herokuapp.com/context_menu");
         WebElement contextMenuSquare = driver.findElement(By.id("hot-spot"));
 
