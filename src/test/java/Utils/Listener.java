@@ -5,7 +5,7 @@ import org.testng.ITestResult;
 
 public class Listener implements ITestListener {
 
-    @Override
+    @Override //делает скиршоты при ошибках ( но есть проблемы с именно этим лисенором  )
     public void onTestFailure(ITestResult result) {
         System.out.println("Make a screenshot");
     }
