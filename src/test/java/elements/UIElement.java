@@ -13,6 +13,7 @@ public class UIElement implements WebElement {
     private WebElement webElement;
     private WaitsService waitsService;
 
+    //поиск элемента
     public UIElement(WebDriver driver, By by) {
         this.driver = driver;
         this.by = by;
@@ -27,7 +28,7 @@ public class UIElement implements WebElement {
     }
 
     @Override
-    public void click() {
+    public void click() { //как пример в юзер степ использовали наш уличшенный клик
         try {
             webElement.click();
         } catch (ElementNotInteractableException ex) {

@@ -23,7 +23,7 @@ public class RadioButton {
             UIElement element = new UIElement(driver, webElement);
             uiElementList.add(element);
             valueList.add(element.getAttribute("value"));
-            textList.add(element.findUIElement(By.xpath("parent::*/strong")).getText().trim());
+            textList.add(element.findUIElement(By.xpath("parent::*/strong")).getText().trim());//trim -обрезает все пробелы лишние
         }
     }
 
