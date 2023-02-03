@@ -4,6 +4,7 @@ import baseEntities.BaseTest;
 import configuration.ReadProperties;
 import io.qameta.allure.*;
 import models.Project;
+import models.User;
 import org.openqa.selenium.By;
 import org.testng.Assert;
 import org.testng.annotations.Test;
@@ -35,9 +36,13 @@ public class LoginTest extends BaseTest {
     @Link(name ="catalog", type = "mylink", url = "https://oliner.by")// реальная ссылка будет по нажаттию которой мы перейдем
     @Severity(SeverityLevel.BLOCKER) //тесты в отчете можно будет отфильтровать по важности
     public void loginSuccessfulTest() {
+        User user = new User.Builder()
+                .withEmail(ReadProperties.username())
+                .withPassword(ReadProperties.password())
+                .build();
 
         Assert.assertTrue(
-                userStep.loginSuccessful(ReadProperties.username(), ReadProperties.password())
+                userStep.loginSuccessful(user)
                         .isPageOpened());
     }
 
